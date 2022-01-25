@@ -1,10 +1,10 @@
 console.log("JAVA SCRIPT IS RUNNING");
 
-fetch("https://puzzle.mead.io/puzzle").then((response) => {
-  response.json().then((data) => {
-    console.log(data);
-  });
-});
+// fetch("https://puzzle.mead.io/puzzle").then((response) => {
+//   response.json().then((data) => {
+//     console.log(data);
+//   });
+// });
 
 const weatherform = document.querySelector("form");
 const search = document.querySelector("input");
