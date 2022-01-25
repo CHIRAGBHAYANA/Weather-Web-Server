@@ -19,19 +19,17 @@ weatherform.addEventListener("submit", (e) => {
     console.log("enter");
     return;
   }
-  fetch(`http://localhost:3000/weather?address=%22${valu}%22`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          messageTwo.textContent = data.error;
-          console.log(data.error);
-        } else {
-          messageOne.textContent = `Temperature ${data.temperature} and Feels Like Temp ${data.feelslikeTemp}`;
-          console.log(data);
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=%22${valu}%22`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        messageTwo.textContent = data.error;
+        console.log(data.error);
+      } else {
+        messageOne.textContent = `Temperature ${data.temperature} and Feels Like Temp ${data.feelslikeTemp}`;
+        console.log(data);
+      }
+    });
+  });
   console.log(valu);
   messageOne.textContent = "";
   messageTwo.textContent = "";
