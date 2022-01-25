@@ -62,15 +62,20 @@ app.get("/weather", (req, res) => {
     if (error) {
       return res.send({ error });
     }
-    forecast(latitude, longitude, (error, { temp, feelslike } = {}) => {
-      if (error) {
-        return res.send({ error });
+    forecast(
+      latitude,
+      longitude,
+      (error, { temp, feelslike, visibility } = {}) => {
+        if (error) {
+          return res.send({ error });
+        }
+        return res.send({
+          temperature: temp,
+          feelslikeTemp: feelslike,
+          visibilityArea: visibility,
+        });
       }
-      return res.send({
-        temperature: temp,
-        feelslikeTemp: feelslike,
-      });
-    });
+    );
   });
 });
 
