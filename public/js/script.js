@@ -25,7 +25,7 @@ weatherform.addEventListener("submit", (e) => {
         messageTwo.textContent = data.error;
         console.log(data.error);
       } else {
-        messageOne.textContent = `Temperature ${data.temperature} and Feels Like Temp ${data.feelslikeTemp} and Visibility ${data.visibilityArea}`;
+        messageOne.textContent = `${data.description},Temperature ${data.temperature} and Feels Like Temp ${data.feelslikeTemp} and Visibility ${data.visibilityArea}`;
         console.log(data);
       }
     });
